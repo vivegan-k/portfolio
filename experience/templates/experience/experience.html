@@ -42,6 +42,8 @@
         }
       }
 
+
+
     </style>
 </head>
 <body>
@@ -55,7 +57,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
                 <a class="nav-item nav-link" href="/blog">Highlights</a>
-                <a class="nav-item nav-link" href="/experience">Experience</a>
+                <a class="nav-item nav-link active" href="/experience">Experience</a>
                 <a class="nav-item nav-link" href="#">Skillset</a>
                 <a class="nav-item nav-link" href="https://www.linkedin.com/in/vivekanandan-k-362858b1">LinkedIn </a>
                 <a class="nav-item nav-link" href="{% static 'Vivekanandan_K.pdf' %}">Resume</a>
@@ -66,34 +68,34 @@
 
 <main role="main">
 
-    <section class="jumbotron text-center">
-        <div class="container">
-            <h1>Hi! I'm Vivek</h1>
-            <p class="lead text-muted">A highly resourceful, self-motivated and enthusiastic Backend Developer cum
-                Automation Engineer having extensive experience in Python.</p>
-            <p>
-                <a href="mailto:vivegan.k@gmail.com" class="btn btn-primary my-2">Email me</a>
-            </p>
-        </div>
-    </section>
+    <section class="jumbotron text-left">
 
-    <!--div class="album py-5 bg-light">
         <div class="container">
+            <h2>Projects</h2>
+            <div class="panel-group" id="accordion">
+                {% for exp in experiences.all %}
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{forloop.counter}}">{{ exp.project_name }}</a>
+                        </h4>
+                    </div>
+                    <div id="collapse{{forloop.counter}}" class="panel-collapse collapse in">
+                        <p><strong>Company Name:</strong> {{exp.company_name}}</p>
+                        <p><strong>Client Name:</strong> {{exp.client}}</p>
+                        <p><strong>Language/Tools:</strong> {{exp.languages}}</p>
 
-            <div class="row">
-                {% for job in jobs.all%}
-                <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm">
-                        <img class="card-img-top" src="{{ job.image.url }}" />
-                        <div class="card-body">
-                            <p class="card-text">{{ job.summary }}</p>
+                        <div class="panel-body">
+                            <p><strong>Project Description:</strong><br/>{{ exp.description }}</p>
+                            <p><strong>Contribution:</strong><br/>{{ exp.contribution }}</p>
                         </div>
                     </div>
                 </div>
                 {% endfor %}
             </div>
         </div>
-    </div-->
+
+    </section>
 
 </main>
 
