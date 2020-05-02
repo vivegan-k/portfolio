@@ -49,7 +49,7 @@
 <body>
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">VIVEKANANDAN</a>
+        <a class="navbar-brand" href="/">VIVEKANANDAN</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -58,7 +58,8 @@
             <div class="navbar-nav ml-auto">
                 <a class="nav-item nav-link" href="/blog">Highlights</a>
                 <a class="nav-item nav-link active" href="/experience">Experience</a>
-                <a class="nav-item nav-link" href="#">Skillset</a>
+                <a class="nav-item nav-link" href="/blog/skillset">Skillset</a>
+                <a class="nav-item nav-link" href="/experience/gallery">Gallery</a>
                 <a class="nav-item nav-link" href="https://www.linkedin.com/in/vivekanandan-k-362858b1">LinkedIn </a>
                 <a class="nav-item nav-link" href="{% static 'Vivekanandan_K.pdf' %}">Resume</a>
             </div>
@@ -71,7 +72,7 @@
     <section class="jumbotron text-left">
 
         <div class="container">
-            <h2>Projects</h2>
+            <h1>Projects</h1>
             <div class="panel-group" id="accordion">
                 {% for exp in experiences.all %}
                 <div class="panel panel-default">
